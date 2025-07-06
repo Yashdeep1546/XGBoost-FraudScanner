@@ -1,31 +1,88 @@
-# Credit Card Fraud Detection Web App
+# 💳 XGBoost FraudScanner
 
-This is a Streamlit web application for detecting fraudulent credit card transactions.
+**XGBoost FraudScanner** is a real-time credit card fraud detection app powered by **machine learning** and deployed using **Streamlit**. This project identifies fraudulent transactions from highly imbalanced data using the XGBoost algorithm.
 
-## Setup and Running
+![App Screenshot](https://your-screenshot-link-if-any.png)
 
-1. Install the required dependencies:
-```
-pip install streamlit pandas joblib scikit-learn xgboost
-```
+---
 
-2. Run the application:
-```
+## 🚀 Live Demo
+
+👉 [Click here to try the app (Streamlit Cloud)](https://your-app-url.streamlit.app)  
+*(Add the link after deployment)*
+
+---
+
+## 📂 Project Structure
+
+XGBoost-FraudScanner/
+├── app.py # Streamlit frontend
+├── xgboost_fraud_model_full.pkl # Trained XGBoost model
+├── scaler_full.pkl # Scaler for Time and Amount
+├── requirements.txt # Dependencies
+├── README.md # This file
+└── .gitignore # Optional
+
+yaml
+Copy
+Edit
+
+---
+
+## 📊 Dataset
+
+This project uses the [Kaggle Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud), which contains:
+
+- **284,807** transactions  
+- **492** fraud cases (~0.17%)  
+- PCA-transformed features `V1` to `V28`, plus `Time`, `Amount`, and `Class`
+
+---
+
+## ⚙️ Features
+
+- Upload a `.csv` file of transactions
+- Model predicts **"Fraud"** or **"Not Fraud"** per transaction
+- Displays:
+  - Prediction results
+  - Total predicted frauds
+  - Total actual frauds (if `Class` column is included)
+  - True positives & recall (fraud detection rate)
+
+---
+
+## 🧠 Model Details
+
+- **Model:** XGBoost Classifier
+- **Scaler:** StandardScaler (only for `Time` and `Amount`)
+- **Training Method:** Used `scale_pos_weight` to handle imbalance
+- **Performance on Full Dataset:**
+  - Precision: 0.89
+  - Recall: 0.79
+  - F1 Score: 0.84
+  - Fraud Detection Rate (on real data): **91.87%**
+
+---
+
+## 📦 How to Run Locally
+
+```bash
+git clone https://github.com/Yashdeep1546/XGBoost-FraudScanner.git
+cd XGBoost-FraudScanner
+pip install -r requirements.txt
 streamlit run app.py
-```
+📈 Future Improvements
+Add interactive visualizations
 
-3. Upload a CSV file with credit card transactions. The CSV should contain at least the following columns:
-   - Time
-   - Amount
-   - (Other features used by the model)
+Manual transaction entry
 
-## Files
-- `app.py`: The main Streamlit application
-- `xgboost_fraud_model_full.pkl`: The trained XGBoost model
-- `scaler_full.pkl`: The scaler for preprocessing Time and Amount features
+Deploy as a REST API
 
-## Troubleshooting
-If you encounter errors:
-- Ensure all dependencies are installed
-- Make sure the model files are in the same directory as app.py
-- Check that your CSV file has the required columns 
+Add threshold slider for sensitivity control
+
+👨‍💻 Author
+Made with 💙 by Yashdeep
+B.Tech CS Student | ML Learner | Aiming 1 Cr 😎
+
+🛡️ License
+This project is open source under the MIT License.

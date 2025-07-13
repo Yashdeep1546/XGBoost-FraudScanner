@@ -57,9 +57,7 @@ XGBoost-FraudScanner/
 ├── requirements.txt ← Required Python packages
 └── README.md ← You're here
 
-yaml
-Copy
-Edit
+
 
 ---
 
@@ -87,12 +85,14 @@ Edit
 
 ## ▶️ Run Locally
 
-```bash
+
 git clone https://github.com/Yashdeep1546/XGBoost-FraudScanner.git
 cd XGBoost-FraudScanner
 pip install -r requirements.txt
 streamlit run app.py
+
 🛠 Tech Stack
+
 Python 3.x
 
 Streamlit
@@ -123,17 +123,7 @@ B.Tech CS | Machine Learning Enthusiast | Aiming for 1 Cr 💸
 🪪 License
 This project is open-source under the MIT License.
 
-yaml
-Copy
-Edit
+
 
 ---
 
-## 🔥 Want to go further?
-
-I can help you:
-- Add auto-updating screenshots/GIFs
-- Create badges (e.g., Python version, Streamlit live)
-- Polish the GitHub description & topics for visibility
-
-Let me know when you want that final resume-ready polish!

@@ -49,7 +49,8 @@ if uploaded_file and model is not None and scaler is not None:
             st.write("### 📊 Prediction Breakdown:")
             
             fraud_counts = df['Predictions'].value_counts()
-            labels = fraud_counts.index.tolist()
+            # Ensure labels are strings for matplotlib pie chart
+            labels = [str(label) for label in fraud_counts.index.tolist()]
             sizes = fraud_counts.values.tolist()
             
             fig1, ax1 = plt.subplots()
